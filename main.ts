@@ -1,7 +1,7 @@
 /**
  * Easy Scripts and Blocks
  */
-//% weight=100 color=#FFFFFF
+//% weight=100 color=#EF6A88
 namespace easyScript {
     /**
      * Prints whatever is inside of it on the microbit.
