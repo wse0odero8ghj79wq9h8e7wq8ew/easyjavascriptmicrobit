@@ -1,4 +1,4 @@
-namespace easy_script {
+namespace easyScript {
     /**
      * Prints whatever is inside of it on the microbit.
      */
