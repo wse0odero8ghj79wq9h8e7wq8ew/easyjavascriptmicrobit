@@ -1,4 +1,3 @@
-//% weight=100 color=#d183ce
 namespace easyScript {
     /**
      * Prints whatever is inside of it on the microbit.
@@ -23,5 +22,13 @@ namespace easyScript {
     //% block="clear"
     export function clear(): void {
         basic.clearScreen()
+    }
+    /**
+     * Adds _health variable.
+     */
+    //% blockId=easyhealth
+    //% block="varhealth"
+    export function varhealth(): void {
+        let _health = 100
     }
 }
