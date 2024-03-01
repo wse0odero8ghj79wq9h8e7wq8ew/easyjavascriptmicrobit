@@ -34,7 +34,7 @@ namespace easyScript {
            let _health = 100
            canaddhealthvar = false
         } else {
-            _health = 100
+            let _health = 100
         }
     }
 }
