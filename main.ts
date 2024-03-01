@@ -1,3 +1,7 @@
+/**
+ * Easy Scripts and Blocks
+ */
+//% weight=100 color=#FFFFFF
 namespace easyScript {
     /**
      * Prints whatever is inside of it on the microbit.
