@@ -1,3 +1,4 @@
+let canaddhealthvar = true
 namespace easyScript {
     /**
      * Prints whatever is inside of it on the microbit.
@@ -29,8 +30,11 @@ namespace easyScript {
     //% blockId=easyhealth
     //% block="varhealth"
     export function varhealth(): void {
-        if (_health){}else{
+        if (canaddhealthvar == true){
            let _health = 100
+           canaddhealthvar = false
+        } else {
+            _health = 100
         }
     }
 }
