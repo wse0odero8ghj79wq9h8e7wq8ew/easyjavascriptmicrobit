@@ -3,8 +3,7 @@ namespace easy {
      * Thingy
      */
     //% blockId=easyprint
-    //% block="print"
-    //% str=""
+    //% block="print $str"
     export function print(str : string): void {
         basic.showString(str)
     }
