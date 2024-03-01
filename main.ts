@@ -29,6 +29,8 @@ namespace easyScript {
     //% blockId=easyhealth
     //% block="varhealth"
     export function varhealth(): void {
-        let _health = 100
+        if (_health){}else{
+           let _health = 100
+        }
     }
 }
