@@ -24,7 +24,4 @@ namespace easyScript {
     export function clear(): void {
         basic.clearScreen()
     }
-    namespace more {
-        
-    }
 }
