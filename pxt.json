@@ -1,5 +1,5 @@
 {
-    "name": "EasyJavascriptMicrobit",
+    "name": "EasyScript",
     "description": "",
     "dependencies": {
         "core": "*",
