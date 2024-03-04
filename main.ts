@@ -62,7 +62,7 @@ namespace easyScript {
      * Prints a factorial.
      */
     //% blockId="specialfactorial"
-    //% block="factorial $num $factorialnumber"
+    //% block="factorial $num"
     export function factorial(num: number) {
         let multiply = num
         let answer = 0
@@ -79,5 +79,13 @@ namespace easyScript {
         }
         return answer;
     }
+    /**
+     * Finds coords of a led using a number instead of position.
+     */
+    //% blockId="specialfindledbynumber"
+    //% block="find led by number $numm"
+    //% numm.min = 1 numm.max = 25
+    export function findledbynumber(numm: number) {
 
+    }
 }
