@@ -1,43 +1,6 @@
 let canaddhealthvar = true
 let poses = [[0,0],[1,0],[2,0],[3,0],[4,0],[0,1],[1,1],[2,1],[3,1],[4,1],[0,2],[1,2],[2,2],[3,2],[4,2],[0,3],[1,3],[2,3],[3,3],[4,3],[0,4],[1,4],[2,4],[3,4],[4,4]]
-namespace easyScript {
-    /**
-     * Prints whatever is inside of it on the microbit.
-     */
-    //% blockId=easyprint
-    //% block="print $str"
-    export function print(str : string): void {
-        basic.showString(str)
-    }
-    /**
-     * Waits for an amount of time in seconds.
-     */
-    //% blockId=easywait
-    //% block="wait $time"
-    export function wait(time : number): void {
-        basic.pause(time*1000)
-    }
-    /**
-     * Clears the screen.
-     */
-    //% blockId=easyclear
-    //% block="clear"
-    export function clear(): void {
-        basic.clearScreen()
-    }
-    /**
-     * Adds _health variable.
-     */
-    //% blockId=easyhealth
-    //% block="varhealth"
-    export function varhealth(): void {
-        if (canaddhealthvar == true){
-           let _health = 100
-           canaddhealthvar = false
-        } else {
-            let _health2 = 100
-        }
-    }
+namespace extras {
     /**
      * Lights a random tile.
      */
@@ -87,10 +50,39 @@ namespace easyScript {
     //% block="find led by number $numm"
     //% numm.min=1 numm.max=25
     export function findledbynumber(numm: number) {
-        if (numm <= 0||numm >= 26){
-            return [0,0];
+        if (numm <= 0 || numm >= 26) {
+            return [0, 0];
         }
-        let coords = poses[numm-1]
+        let coords = poses[numm - 1]
         return coords;
+    }
+}
+
+
+
+namespace easyScript {
+    /**
+     * Prints whatever is inside of it on the microbit.
+     */
+    //% blockId=easyprint
+    //% block="print $str"
+    export function print(str : string): void {
+        basic.showString(str)
+    }
+    /**
+     * Waits for an amount of time in seconds.
+     */
+    //% blockId=easywait
+    //% block="wait $time"
+    export function wait(time : number): void {
+        basic.pause(time*1000)
+    }
+    /**
+     * Clears the screen.
+     */
+    //% blockId=easyclear
+    //% block="clear"
+    export function clear(): void {
+        basic.clearScreen()
     }
 }
