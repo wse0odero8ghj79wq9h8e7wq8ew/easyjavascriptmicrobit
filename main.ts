@@ -1,4 +1,5 @@
 let canaddhealthvar = true
+let poses = [[0,0],[1,0],[2,0],[3,0],[4,0],[0,1],[1,1],[2,1],[3,1],[4,1],[0,2],[1,2],[2,2],[3,2],[4,2],[0,3],[1,3],[2,3],[3,3],[4,3],[0,4],[1,4],[2,4],[3,4],[4,4]]
 namespace easyScript {
     /**
      * Prints whatever is inside of it on the microbit.
@@ -80,12 +81,16 @@ namespace easyScript {
         return answer;
     }
     /**
-     * Finds coords of a led using a number instead of position.
+     * Finds coords of a led in a table using a number instead of position.
      */
     //% blockId="specialfindledbynumber"
     //% block="find led by number $numm"
     //% numm.min=1 numm.max=25
     export function findledbynumber(numm: number) {
-
+        if (numm <= 0||numm >= 26){
+            return [0,0];
+        }
+        let coords = poses[numm-1]
+        return coords;
     }
 }
