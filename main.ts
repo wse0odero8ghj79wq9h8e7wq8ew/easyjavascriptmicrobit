@@ -84,7 +84,7 @@ namespace easyScript {
      */
     //% blockId="specialfindledbynumber"
     //% block="find led by number $numm"
-    //% numm.min = 1 numm.max = 25
+    //% numm.min=1 numm.max=25
     export function findledbynumber(numm: number) {
 
     }
