@@ -57,7 +57,7 @@ namespace extras {
         return coords;
     }
     /**
-     * Finds x coord of a led in a table using a number instead of position.
+     * Finds x coord of a led using a number instead of position.
      */
     //% blockId="specialfindledxbynumber"
     //% block="find led x by number $numm"
@@ -70,7 +70,7 @@ namespace extras {
         return coords[0];
     }
     /**
-     * Finds y coord of a led in a table using a number instead of position.
+     * Finds y coord of a led using a number instead of position.
      */
     //% blockId="specialfindledybynumber"
     //% block="find led y by number $numm"
@@ -81,6 +81,19 @@ namespace extras {
         }
         let coords = poses[numm - 1]
         return coords[1];
+    }
+    /**
+     * Plots an led using number instead of position.
+     */
+    //% blockId="specialplotledbynumber"
+    //% block="plot led by number $numm"
+    //% numm.min=1 numm.max=25
+    export function plotledbynumber(numm: number) {
+        if (numm <= 0 || numm >= 26) {
+            return;
+        }
+        let coords = poses[numm - 1]
+        led.plot(coords[0],coords[1])
     }
 }
 
