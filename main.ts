@@ -146,7 +146,7 @@ namespace extras {
         }
         let coords5 = poses[numm - 1]
         let onoroff = led.point(coords5[0],coords5[1])
-        cb(onoroff)
+        return cb(onoroff);
     }
 }
 namespace easyScript {
