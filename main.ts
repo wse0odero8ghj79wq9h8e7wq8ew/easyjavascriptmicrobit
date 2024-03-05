@@ -60,6 +60,21 @@ namespace led {
         let randbright = randint(0, 255)
         led.plotBrightness(x, y, randbright)
     }
+    /**
+     * Lights a random position led with set brightness.
+     */
+    //% blockId="led_lrplwb"
+    //% block="light random pos led with brightness $transparency"
+    //% x.min=0 x.max=4
+    //% y.min=0 y.max=4
+    export function lrplwb(transparency: number) {
+        if (transparency <= -1||transparency >= 256) {
+            return;
+        }
+        let x = randint(0,4)
+        let y = randint(0,4)
+        led.plotBrightness(x, y, transparency)
+    }
 }
 
 namespace extras {
