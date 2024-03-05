@@ -45,6 +45,30 @@ function grabindexbycoords(x:number,y:number){
     gibc = 0
 }
 
+namespace Math{
+    /**
+     * Outputs a factorial.
+     */
+    //% blockId="specialfactorial"
+    //% block="factorial $num"
+    export function factorial(num: number) {
+        let multiply = num
+        let answer = 0
+        if (num <= -1) {
+            return 0;
+        }
+        if (num == 0 || num == 1) {
+            return 1;
+        }
+        answer = num
+        while (multiply >= 3) {
+            multiply = multiply - 1
+            answer = answer * multiply
+        }
+        return answer;
+    }
+}
+
 namespace led {
     /**
      * Lights a random transparency led with set coordinates.
@@ -98,27 +122,6 @@ namespace extras {
         let randy2 = randint(0, 4)
         let randbright = randint(0, 255)
         led.plotBrightness(randx2, randy2, randbright)
-    }
-    /**
-     * Outputs a factorial.
-     */
-    //% blockId="specialfactorial"
-    //% block="factorial $num"
-    export function factorial(num: number) {
-        let multiply = num
-        let answer = 0
-        if (num <= -1) {
-            return 0;
-        }
-        if (num == 0 || num == 1) {
-            return 1;
-        }
-        answer = num
-        while (multiply >= 3) {
-            multiply = multiply - 1
-            answer = answer * multiply
-        }
-        return answer;
     }
     /**
      * Finds coords of a led in a table using a number instead of position.
