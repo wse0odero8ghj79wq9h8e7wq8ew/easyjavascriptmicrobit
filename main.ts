@@ -145,13 +145,10 @@ namespace extras {
     //% block="find led number from pos $numx $numy"
     //% numm.min=1 numm.max=25
     export function findlednumberfrompos(numx: number, numy: number) {
-        let newarray = []
-        newarray.push(numx)
-        newarray.push(numy)
         if (numx <= -1 || numy >= 5) {
             return 0;
         }
-        for (let i = 0; i < 25; i++) {
+        for (let i = 1; i < 26; i++) {
             grabcoordsbyindex(i)
             if (coords[0] == numx){
                   if (coords[1] == numy){
