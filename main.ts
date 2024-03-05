@@ -56,6 +56,32 @@ namespace extras {
         let coords = poses[numm - 1]
         return coords;
     }
+    /**
+     * Finds x coord of a led in a table using a number instead of position.
+     */
+    //% blockId="specialfindledxbynumber"
+    //% block="find led x by number $numm"
+    //% numm.min=1 numm.max=25
+    export function findledxbynumber(numm: number) {
+        if (numm <= 0 || numm >= 26) {
+            return [0, 0];
+        }
+        let coords = poses[numm - 1]
+        return coords[0];
+    }
+    /**
+     * Finds y coord of a led in a table using a number instead of position.
+     */
+    //% blockId="specialfindledybynumber"
+    //% block="find led y by number $numm"
+    //% numm.min=1 numm.max=25
+    export function findledybynumber(numm: number) {
+        if (numm <= 0 || numm >= 26) {
+            return [0, 0];
+        }
+        let coords = poses[numm - 1]
+        return coords[1];
+    }
 }
 
 
