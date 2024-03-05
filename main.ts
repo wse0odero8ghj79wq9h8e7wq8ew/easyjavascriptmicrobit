@@ -153,9 +153,11 @@ namespace extras {
         }
         for (let i = 0; i < 25; i++) {
             grabcoordsbyindex(i)
-            if (coords == newarray){
-                return i;
-                break;
+            if (coords[0] == numx){
+                  if (coords[1] == numy){
+                      return i;
+                      break;
+                 }
             }
         }
         return 43;
