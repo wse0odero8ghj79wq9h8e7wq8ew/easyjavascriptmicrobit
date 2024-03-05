@@ -138,7 +138,7 @@ namespace extras {
      * If led is on then
      */
     //% blockId="specialifledison"
-    //% block="if led $numm is on $onoff"
+    //% block="if led $numm is on $cb"
     //% numm.min=1 numm.max=25
     export function ifledison(numm: number,cb: (onoff : boolean) => void): void {
         if (numm <= 0 || numm >= 26) {
