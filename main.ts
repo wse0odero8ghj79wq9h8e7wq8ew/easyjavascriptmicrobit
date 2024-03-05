@@ -1,6 +1,7 @@
-let canaddhealthvar = true
-let coords = [0,0]
+// Variables
 let gibc = 0
+let canaddhealthvar = true
+let coords = [0, 0]
 let poses = [
 [0, 0],
 [1, 0],
@@ -28,10 +29,8 @@ let poses = [
 [3, 4],
 [4, 4]
 ]
-function grabcoordsbyindex(index:number){
-    coords = poses[index - 1]
-}
-function grabindexbycoords(x:number,y:number){
+// Functions
+function grabindexbycoords(x: number, y: number) {
     for (let i = 1; i < 26; i++) {
         grabcoordsbyindex(i)
         if (coords[0] == x) {
@@ -44,7 +43,10 @@ function grabindexbycoords(x:number,y:number){
     }
     gibc = 0
 }
-
+function grabcoordsbyindex(index: number) {
+    coords = poses[index - 1]
+}
+// More Math
 namespace Math{
     /**
      * Outputs a factorial.
@@ -68,8 +70,29 @@ namespace Math{
         return answer;
     }
 }
-
+// More Leds
 namespace led {
+    /**
+     * Lights a random tile.
+     */
+    //% blockId="specialrandomtile"
+    //% block="light random tile"
+    export function randomtile(): void {
+        let randx = randint(0, 4)
+        let randy = randint(0, 4)
+        led.plot(randx, randy)
+    }
+    /**
+     * Lights a random tile with random transparency.
+     */
+    //% blockId="specialrandomtiletransparency"
+    //% block="light random transparency tile"
+    export function randomtiletransparency(): void {
+        let randx2 = randint(0, 4)
+        let randy2 = randint(0, 4)
+        let randbright2 = randint(0, 255)
+        led.plotBrightness(randx2, randy2, randbright2)
+    }
     /**
      * Lights a random transparency led with set coordinates.
      */
@@ -100,29 +123,8 @@ namespace led {
         led.plotBrightness(x, y, transparency)
     }
 }
-
+// Extra Leds
 namespace extraLed {
-    /**
-     * Lights a random tile.
-     */
-    //% blockId="specialrandomtile"
-    //% block="light random tile"
-    export function randomtile(): void {
-        let randx = randint(0, 4)
-        let randy = randint(0, 4)
-        led.plot(randx, randy)
-    }
-    /**
-     * Lights a random tile with random transparency.
-     */
-    //% blockId="specialrandomtiletransparency"
-    //% block="light random transparency tile"
-    export function randomtiletransparency(): void {
-        let randx2 = randint(0, 4)
-        let randy2 = randint(0, 4)
-        let randbright = randint(0, 255)
-        led.plotBrightness(randx2, randy2, randbright)
-    }
     /**
      * Finds coords of a led in a table using a number instead of position.
      */
