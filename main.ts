@@ -1,5 +1,6 @@
 let canaddhealthvar = true
 let coords = [0,0]
+let gibc = 0
 let poses = [
 [0, 0],
 [1, 0],
@@ -29,6 +30,19 @@ let poses = [
 ]
 function grabcoordsbyindex(index:number){
     coords = poses[index - 1]
+}
+function grabindexbycoords(x:number,y:number){
+    for (let i = 1; i < 26; i++) {
+        grabcoordsbyindex(i)
+        if (coords[0] == x) {
+            if (coords[1] == y) {
+                gibc = i
+                return;
+                break;
+            }
+        }
+    }
+    gibc = 0
 }
 namespace extras {
     /**
@@ -148,16 +162,8 @@ namespace extras {
         if (numx <= -1 || numy >= 5) {
             return 0;
         }
-        for (let i = 1; i < 26; i++) {
-            grabcoordsbyindex(i)
-            if (coords[0] == numx){
-                  if (coords[1] == numy){
-                      return i;
-                      break;
-                 }
-            }
-        }
-        return 43;
+        grabindexbycoords(numx,numy)
+        return gibc;
     }
 }
 namespace easyScript {
