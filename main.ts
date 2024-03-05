@@ -1,5 +1,31 @@
 let canaddhealthvar = true
-let poses = [[0,0],[1,0],[2,0],[3,0],[4,0],[0,1],[1,1],[2,1],[3,1],[4,1],[0,2],[1,2],[2,2],[3,2],[4,2],[0,3],[1,3],[2,3],[3,3],[4,3],[0,4],[1,4],[2,4],[3,4],[4,4]]
+let poses = [
+[0, 0],
+[1, 0],
+[2, 0],
+[3, 0],
+[4, 0],
+[0, 1],
+[1, 1],
+[2, 1],
+[3, 1],
+[4, 1],
+[0, 2],
+[1, 2],
+[2, 2],
+[3, 2],
+[4, 2],
+[0, 3],
+[1, 3],
+[2, 3],
+[3, 3],
+[4, 3],
+[0, 4],
+[1, 4],
+[2, 4],
+[3, 4],
+[4, 4]
+]
 namespace extras {
     /**
      * Lights a random tile.
@@ -66,8 +92,8 @@ namespace extras {
         if (numm <= 0 || numm >= 26) {
             return 0;
         }
-        let coords = poses[numm - 1]
-        return coords[0];
+        let coords2 = poses[numm - 1]
+        return coords2[0];
     }
     /**
      * Finds y coord of a led using a number instead of position.
@@ -79,8 +105,8 @@ namespace extras {
         if (numm <= 0 || numm >= 26) {
             return 0;
         }
-        let coords = poses[numm - 1]
-        return coords[1];
+        let coords3 = poses[numm - 1]
+        return coords3[1];
     }
     /**
      * Plots an led using number instead of position.
@@ -92,8 +118,8 @@ namespace extras {
         if (numm <= 0 || numm >= 26) {
             return;
         }
-        let coords = poses[numm - 1]
-        led.plot(coords[0],coords[1])
+        let coords4 = poses[numm - 1]
+        led.plot(coords4[0],coords4[1])
     }
     /**
      * Finds state of led, on or off by number.
@@ -103,15 +129,12 @@ namespace extras {
     //% numm.min=1 numm.max=25
     export function pointledbynumber(numm: number) {
         if (numm <= 0 || numm >= 26) {
-            return [0, 0];
+            return false;
         }
-        let coords = poses[numm - 1]
-        return led.point(coords[0],coords[1]);
+        let coords5 = poses[numm - 1]
+        return led.point(coords5[0],coords5[1]);
     }
 }
-
-
-
 namespace easyScript {
     /**
      * Prints whatever is inside of it on the microbit.
