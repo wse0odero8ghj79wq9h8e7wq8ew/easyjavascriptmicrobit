@@ -1,4 +1,5 @@
 let canaddhealthvar = true
+let coords = [0,0]
 let poses = [
 [0, 0],
 [1, 0],
@@ -26,6 +27,9 @@ let poses = [
 [3, 4],
 [4, 4]
 ]
+function grabcoordsbyindex(index:number){
+    coords = poses[index - 1]
+}
 namespace extras {
     /**
      * Lights a random tile.
@@ -79,7 +83,7 @@ namespace extras {
         if (numm <= 0 || numm >= 26) {
             return [0, 0];
         }
-        let coords = poses[numm - 1]
+        grabcoordsbyindex(numm)
         return coords;
     }
     /**
@@ -92,8 +96,8 @@ namespace extras {
         if (numm <= 0 || numm >= 26) {
             return 0;
         }
-        let coords2 = poses[numm - 1]
-        return coords2[0];
+        grabcoordsbyindex(numm)
+        return coords[0];
     }
     /**
      * Finds y coord of a led using a number instead of position.
@@ -105,8 +109,8 @@ namespace extras {
         if (numm <= 0 || numm >= 26) {
             return 0;
         }
-        let coords3 = poses[numm - 1]
-        return coords3[1];
+        grabcoordsbyindex(numm)
+        return coords;
     }
     /**
      * Plots an led using number instead of position.
@@ -118,8 +122,8 @@ namespace extras {
         if (numm <= 0 || numm >= 26) {
             return;
         }
-        let coords4 = poses[numm - 1]
-        led.plot(coords4[0],coords4[1])
+        grabcoordsbyindex(numm)
+        led.plot(coords[0],coords[1])
     }
     /**
      * Finds state of led, on or off by number.
@@ -131,21 +135,22 @@ namespace extras {
         if (numm <= 0 || numm >= 26) {
             return false;
         }
-        let coords5 = poses[numm - 1]
-        return led.point(coords5[0],coords5[1]);
+        grabcoordsbyindex(numm)
+        return led.point(coords[0],coords[1]);
     }
     /**
      * If led is on then
      */
     //% blockId="specialifledison"
-    //% block="if led $numm is on $cb"
+    //% block="if led $numm is on"
     //% numm.min=1 numm.max=25
-    export function ifledison(numm: number,cb: (onoff : boolean) => void): void {
+    //% block
+    export function ifledison(numm: number,cb: (onoff : boolean) => void){
         if (numm <= 0 || numm >= 26) {
             return;
         }
-        let coords5 = poses[numm - 1]
-        let onoroff = led.point(coords5[0],coords5[1])
+        grabcoordsbyindex(numm)
+        let onoroff = led.point(coords[0],coords[1])
         cb(onoroff)
     }
 }
