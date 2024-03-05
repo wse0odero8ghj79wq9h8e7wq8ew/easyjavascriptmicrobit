@@ -142,10 +142,9 @@ namespace extras {
     //% numm.min=1 numm.max=25
     export function ifledison(numm: number,cb: () => void) {
         if (numm <= 0 || numm >= 26) {
-            return false;
+            return;
         }
         let coords5 = poses[numm - 1]
-        return led.point(coords5[0], coords5[1]);
     }
 }
 namespace easyScript {
