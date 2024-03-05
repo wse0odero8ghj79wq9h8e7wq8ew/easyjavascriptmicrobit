@@ -1,3 +1,6 @@
+enum yes{
+    r = 5
+}
 // Variables
 let gibc = 0
 let canaddhealthvar = true
