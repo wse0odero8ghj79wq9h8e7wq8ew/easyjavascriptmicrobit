@@ -134,6 +134,14 @@ namespace extras {
         let coords5 = poses[numm - 1]
         return led.point(coords5[0],coords5[1]);
     }
+    /**
+     * If led is on then
+     */
+    //% blockId="specialifledison"
+    //% block="if led $numm is on"
+    //% numm.min=1 numm.max=25
+    export function ifledison(cb: (numm : number) => void) {
+    }
 }
 namespace easyScript {
     /**

@@ -3,7 +3,8 @@
     "version": "0.2.0",
     "description": "",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "radio": "*"
     },
     "files": [
         "main.blocks",
