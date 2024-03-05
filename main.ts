@@ -155,7 +155,7 @@ namespace extras {
                 break;
             }
         }
-        return 0;
+        return 43;
     }
 }
 namespace easyScript {
