@@ -95,6 +95,19 @@ namespace extras {
         let coords = poses[numm - 1]
         led.plot(coords[0],coords[1])
     }
+    /**
+     * Finds state of led, on or off by number.
+     */
+    //% blockId="specialpointledbynumber"
+    //% block="point led by number $numm"
+    //% numm.min=1 numm.max=25
+    export function pointledbynumber(numm: number) {
+        if (numm <= 0 || numm >= 26) {
+            return [0, 0];
+        }
+        let coords = poses[numm - 1]
+        return led.point(coords[0],coords[1]);
+    }
 }
 
 
