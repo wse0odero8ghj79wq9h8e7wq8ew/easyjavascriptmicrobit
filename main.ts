@@ -139,19 +139,23 @@ namespace extras {
         return led.point(coords[0],coords[1]);
     }
     /**
-     * If led is on then
+     * Find number of led from position.
      */
-    //% blockId="specialifledison"
-    //% block="if led $numm is on"
+    //% blockId="specialfindlednumberfrompos"
+    //% block="find led number from pos $numx $numy"
     //% numm.min=1 numm.max=25
-    //% block
-    export function ifledison(numm: number,cb: (onoff : boolean) => void){
-        if (numm <= 0 || numm >= 26) {
-            return;
+    export function findlednumberfrompos(numx: number, numy: number) {
+        if (numx <= -1 || numy >= 5) {
+            return 0;
         }
-        grabcoordsbyindex(numm)
-        let onoroff = led.point(coords[0],coords[1])
-        cb(onoroff)
+        for (let i = 0; i < 25; i++) {
+            grabcoordsbyindex(i)
+            if (coords == [numx,numy]){
+                return i;
+                break;
+            }
+        }
+        return 0;
     }
 }
 namespace easyScript {
