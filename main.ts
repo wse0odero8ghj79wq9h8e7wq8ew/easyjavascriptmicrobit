@@ -139,7 +139,7 @@ namespace extras {
         return led.point(coords[0],coords[1]);
     }
     /**
-     * Find number of led from position.
+     * Find number of led from position. X is first and Y is second.
      */
     //% blockId="specialfindlednumberfrompos"
     //% block="find led number from pos $numx $numy"
@@ -150,8 +150,8 @@ namespace extras {
         }
         for (let i = 1; i < 26; i++) {
             grabcoordsbyindex(i)
-            if (coords[0] == numy){
-                  if (coords[1] == numx){
+            if (coords[0] == numx){
+                  if (coords[1] == numy){
                       return i;
                       break;
                  }
