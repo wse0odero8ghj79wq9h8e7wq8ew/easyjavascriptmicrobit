@@ -44,6 +44,24 @@ function grabindexbycoords(x:number,y:number){
     }
     gibc = 0
 }
+
+namespace led {
+    /**
+     * Lights a random transparency led with set coordinates.
+     */
+    //% blockId="led_lrtlwc"
+    //% block="light random transparency led with coords $x $y"
+    //% x.min=0 x.max=4
+    //% y.min=0 y.max=4
+    export function lrtlwc(x:number,y:number){
+        if (x <= -1||x >= 5||y <= -1||y >= 5){
+            return;
+        }
+        let randbright = randint(0, 255)
+        led.plotBrightness(x, y, randbright)
+    }
+}
+
 namespace extras {
     /**
      * Lights a random tile.
@@ -67,7 +85,7 @@ namespace extras {
         led.plotBrightness(randx2, randy2, randbright)
     }
     /**
-     * Prints a factorial.
+     * Outputs a factorial.
      */
     //% blockId="specialfactorial"
     //% block="factorial $num"
@@ -166,6 +184,7 @@ namespace extras {
         return gibc;
     }
 }
+
 namespace easyScript {
     /**
      * Prints whatever is inside of it on the microbit.
