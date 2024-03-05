@@ -140,11 +140,13 @@ namespace extras {
     //% blockId="specialifledison"
     //% block="if led $numm is on"
     //% numm.min=1 numm.max=25
-    export function ifledison(numm: number,cb: () => void): void {
+    export function ifledison(numm: number,cb: (onoff : boolean) => void): void {
         if (numm <= 0 || numm >= 26) {
             return;
         }
         let coords5 = poses[numm - 1]
+        let onoroff = led.point(coords5[0],coords5[1])
+        cb(onoroff)
     }
 }
 namespace easyScript {
