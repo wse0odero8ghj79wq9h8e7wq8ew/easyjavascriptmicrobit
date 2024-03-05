@@ -101,7 +101,7 @@ namespace led {
     }
 }
 
-namespace extraled {
+namespace extraLed {
     /**
      * Lights a random tile.
      */
