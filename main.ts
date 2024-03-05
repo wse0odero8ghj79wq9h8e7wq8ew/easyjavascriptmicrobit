@@ -150,8 +150,8 @@ namespace extras {
         }
         for (let i = 1; i < 26; i++) {
             grabcoordsbyindex(i)
-            if (coords[0] == numx){
-                  if (coords[1] == numy){
+            if (coords[0] == numy){
+                  if (coords[1] == numx){
                       return i;
                       break;
                  }
